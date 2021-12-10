@@ -1,0 +1,11 @@
+@mixin  breakpoint ($bp) {
+    @media screen and (max-width: $bp) {
+        @content;
+    }
+}
+
+@mixin  breakpoint__min-width ($bp) {
+    @media screen and (min-width: calc($bp + 1px)) {
+        @content;
+    }
+}

@@ -1,0 +1,57 @@
+.intro {
+    margin-bottom: 5.8rem;
+
+    @include breakpoint ($md){
+        margin-bottom: 3rem;
+    }
+}
+
+.intro__nav {
+    position: fixed;
+    top: 8.5rem;
+    left: 0;
+    z-index: 1000;
+    width: 100%;  
+    background-color: $white; 
+    padding: 3.5rem 0;
+    min-height: 40px;
+    border-top: 1px solid $white; 
+    border-bottom: 1px solid $white; 
+    min-height: 50px;
+
+    @include breakpoint ($lg){
+        top: 7rem;
+        padding: 2rem 0;
+    }
+    @include breakpoint ($md){
+        top: 6.9rem;
+        padding: 2rem 0;
+    }
+}
+
+.intro__content{
+    position: relative;
+}
+
+.intro__img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1228/641;
+    border-radius: 3rem;
+}
+
+@-webkit-keyframes fade {
+    from { opacity: 0.4;}
+    to { opacity: 1; }
+}
+
+@keyframes fade {
+    from {opacity: 0.4 ;}
+    to {  opacity: 1;}
+}
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}

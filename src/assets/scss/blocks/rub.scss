@@ -1,0 +1,28 @@
+.rub {
+    font-family: arial;
+    vertical-align: middle;
+    border-bottom: 0.1rem solid;
+    line-height: 0.4rem;
+    display: inline-block;
+    width: 0.8rem;
+    margin-right: 2rem;
+
+    @include breakpoint ($md) {
+      font-size: 1.2rem;
+    }
+
+    @include breakpoint ($sm) {
+      width: 0.5rem;
+    }
+  }
+
+  .strike{
+      color: $secondary-black;
+      font-weight: 500;
+      text-decoration: line-through;
+      display: inline-block;
+
+      &--none {
+        visibility: hidden;;
+      }
+  }

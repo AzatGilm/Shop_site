@@ -1,0 +1,37 @@
+.discribe-content {
+    max-width: 90%;
+    padding-left: 4rem;
+
+    @include breakpoint ($md){
+        padding-left: 1.5rem;
+    }
+
+}
+
+.discribe-content__item {
+    font-size: 1.4rem;
+    color: $black;
+    padding-top: 1rem;
+
+    @include breakpoint ($md){
+        padding-top: 0;
+    }
+
+    &:not(:first-child){
+        padding-top: 2rem;
+
+        @include breakpoint ($lg){
+            padding-top: 1rem;
+        }
+    } 
+
+    @include breakpoint ($md){
+        font-size: 1.2rem;
+    }
+    
+}
+
+.discribe-content__text-tile,
+.discribe-content__item-text {
+    color: $black;
+}

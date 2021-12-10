@@ -1,0 +1,44 @@
+.listing-title--xbold {
+    font-weight: 800;
+    padding-bottom: 1.5rem;
+}
+
+.listing-item__info {
+    
+    &:last-child {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.listing-item__info-rating {
+    padding-top: 0.5rem;
+}
+
+.listing-item__info-review {
+    font-size: 1.4rem;
+    color: $black;
+
+        &--b {
+            font-weight: 700;
+
+            @include breakpoint ($md){
+                font-size: 1.2rem;
+            }
+        }
+        &--r {
+            font-weight: 400;
+
+            @include breakpoint ($md){
+                font-size: 1.2rem;
+            }
+        } 
+        &:not(:last-child) {
+            margin-top: 1.5rem;
+
+            @include breakpoint ($md){
+                margin-top: 1rem;
+            }
+        }        
+}
+
+

@@ -1,0 +1,72 @@
+.nav__body._active {
+        @include breakpoint ($md){
+        left: 2rem;
+        max-height: 70vh;
+
+        .nav__list {
+            max-height: 45vh;
+            overflow: auto;
+
+            &::-webkit-scrollbar {
+                width: 2px;
+            }
+            &::-webkit-scrollbar-track {
+                background: #E2E2E2;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: $blue;
+            }
+        }
+    }
+}
+
+.nav__item._active {
+
+    @include breakpoint ($md){
+    
+        .menu__arrow {
+            transform: rotate(-180deg);
+        }
+
+        .nav_subnav-wrapper {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        position: relative;
+        z-index: 0;
+        top: 0;
+        background-color: $white;
+
+        border: none;
+        
+        width: 90%;
+        height: 15rem;
+
+        padding: 1rem 1rem 0;
+
+        border-radius: 0;
+        overflow: hidden;
+        max-height: 25vh;
+    }
+}
+}
+
+    .burger._active {
+        height: 1.2rem;
+        width: 2.5rem;
+        span {
+            opacity: 0;
+        }
+
+        &::before,
+        &::after {
+            top: 50%;;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+        }
+        &::after {
+            transform: rotate(-45deg);
+        }
+}

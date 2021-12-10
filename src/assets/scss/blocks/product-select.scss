@@ -1,0 +1,11 @@
+.product-select {
+    border: 1px solid $primary-black;
+    margin: 4rem 0 2rem 0;
+
+    font-size: 1rem;
+    color: $secondary-white;
+
+    @include breakpoint ($lg) {
+        margin: 2rem 0 1rem 0;
+    }
+}

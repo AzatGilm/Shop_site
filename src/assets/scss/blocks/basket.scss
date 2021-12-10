@@ -1,0 +1,153 @@
+.basket {
+    padding-top: 3rem;
+
+    @include breakpoint ($lg) {
+        padding-top: 0;
+    }
+}
+.basket-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 1.5rem;
+
+    @include breakpoint ($md) {
+        grid-column-gap: 1.5rem;
+    }
+    @include breakpoint ($sm) {
+        display: block;
+    }
+}
+
+.basket-right {
+    @include breakpoint ($sm) {
+        margin-top: 1rem;
+    }
+}
+
+.basket-listing {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 3rem;
+
+    @include breakpoint($md) {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 2rem;
+    }
+}
+
+.basket-listing__left{
+    @include breakpoint ($md) {
+        grid-column: 1/3;
+    }
+}
+
+.summ__quantity,
+.summ_discount {
+    @include breakpoint ($md) {
+        padding-left: 1.5rem;
+    }
+}
+
+.basket-bottom {
+    grid-column: 1/3;
+    border: none;
+}
+
+.basket-bottom_flex {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+
+    @include breakpoint($lg) {
+        width: 100%;
+    }
+
+    @include breakpoint($md) {
+        display: block;
+    }
+
+    &-left{
+        width: 25%;
+
+        @include breakpoint($md) {
+            width: 70%;
+            margin: 2rem 0 2rem 0;
+        }
+        
+    }
+    &-right {
+        width: 60%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; 
+        align-items: center; 
+        
+        
+        @include breakpoint($lg) {
+            width: 100%;
+        }
+    }
+}
+
+.flex-left_item {
+    padding-bottom: 1rem;
+}
+
+.flex-left_title,
+.flex-left_value {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: $black;
+
+    margin-right: 1.5rem;
+
+    .rub {
+        font-size: 1.4rem;
+        
+        width: 0.5rem;
+    }
+}
+
+
+.form {
+    margin: auto 0;
+    text-align: center;
+    
+    height: 100%;
+
+    &::before {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+}
+
+.quantity {
+    outline: none;
+    border: 1.5px solid #EEEEEE;
+    border-radius: .5rem  ;
+    width: 33%;
+    
+    &::-webkit-inner-spin-button { 
+        opacity: 1;
+      }
+}
+
+.summ__quantity,
+.summ_discount {
+    font-size: 1.4rem;
+    font-weight: 400;
+
+    color: $black;
+}
+
+.summ_discount{
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+

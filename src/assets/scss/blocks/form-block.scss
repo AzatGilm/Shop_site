@@ -1,0 +1,49 @@
+.form-block__control {
+    display: block;
+    border: 1.5px solid $primary-black;
+    width: 263px;
+    margin-bottom: 0.9rem;
+    resize: none;
+
+    &::placeholder{
+        color: $secondary-white;
+    }
+}
+
+.form-block_radio-caption {
+    display: inline-block;
+    font-size: 1.4rem;
+    color: $black;
+    font-weight: 700;
+    padding-right: 3rem;
+    margin: 3rem 0;
+    margin-bottom: 0;
+
+    @include breakpoint ($md){
+        display: block;
+        margin-bottom: 1rem;
+    }
+}
+#form-block_radio {
+    color: $black;;
+    vertical-align: middle;
+    margin-right: 1rem;
+
+    @include breakpoint ($md){
+        margin: 0;
+    }
+}
+label {
+    font-size: 1.4rem;
+    color: $black;
+    font-weight: 400;
+    padding: 0 1rem;
+}
+
+.form-line {
+    display: block;
+    height: 0.05rem;
+    width: 100%;
+    background-color: $primary-black;
+    margin-bottom: 2rem;
+}

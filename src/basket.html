@@ -1,0 +1,105 @@
+---
+layout: default
+title: Basket
+---
+
+<div class="basket">
+    <div class="page-block page-block--m basket-grid">
+        <div class="page-block page-block--m basket-left">
+            <h1 class="listing-title">Корзина заказа</h1>
+            <div class="basket-listing">
+               
+                <div class="basket-listing__left">
+                    <img src="assets/images/basket/basket1.png" alt="img1" class="listing-item__img">
+                </div>
+                <div class="basket-listing__middle">
+                    <div class="listing-item__info">
+                        <div class="listing-item__info-title listing-item__info-title--basket">Костюм для девочки</div>
+                        <div class="listing-item__info-price">599              <span class="rub">Р</span> 
+                            <div class="strike">719
+                                <span class="rub">Р</span> 
+                            </div>
+                        </div>
+                        <div class="listing-item__info-wheight">
+                            Вес посылки: 400 г.
+                        </div>
+
+                    </div> 
+                </div>
+                <div class="basket-listing__right">
+                   <form class="form" action="/" method="post">
+                       <input class="quantity" name="sel_number" type="number" >
+                   </form>
+                </div>
+            </div>
+        </div>
+        <div class="page-block page-block--m basket-right">
+            <div class="summ">
+                <div class="listing-title listing-summ">Итого:  
+                    <div class="listing-item__info-price listing-item__info-price--xl">599 <span class="rub">Р</span>                     
+                    </div> 
+                 </div>
+                 
+                 <div class="summ__quantity">
+                     3 товара
+                 </div>
+                 <div class="summ_discount">
+                     Сумма скидки: 360 <span class="rub">Р</span>
+                 </div>
+                 <div class="btn--container">
+                    <a href="#" class="btn btn--blue btn--md">Оформить заказ</a>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="page-block page-block--m basket-bottom">
+            <span class="form-line" ></span>
+            <h2 class="listing-title">Оформление заказа</h2>
+            <form class="form-block" action="/" method="post" >
+                <input type="text" class="form-block__control" name="firstname" placeholder="Имя">
+                <input type="tel" class="form-block__control" name="telephone" placeholder="Телефон">
+                <input type="text" class="form-block__control" name="city" placeholder="Город">
+                <textarea type="text" class="form-block__control" name="addres" placeholder="Адрес"></textarea>
+
+                
+                <h3 class="form-block_radio-caption">Способ получения:</h3>
+                <input type="radio" name="radio" value="1" id="form-block_radio">  
+                <label for="form-block_radio">Доставка</label>        
+                <input type="radio" name="radio" value="2" id="form-block_radio">  
+                <label for="form-block_radio">Забрать в магазине</label> 
+
+            </form>
+        </div>
+
+        <div class="page-block page-block--m basket-bottom" >
+            <span class="form-line" ></span>
+            <div class="basket-bottom_flex">
+                <div class="basket-bottom_flex-left">
+                    <div class="flex-left_item">
+                        <p class="flex-left_title">Сумма заказа:
+                        </p>               
+                        <p class="flex-left_value">1797<span class="rub">Р</span> 
+                        </p> 
+                    </div>
+                    <div class="flex-left_item">              
+                        <p class="flex-left_title">Доставка:
+                        </p>               
+                        <p class="flex-left_value">500<span class="rub">Р</span> 
+                        </p> 
+                    </div>
+                    <div class="flex-left_item">             
+                        <p class="flex-left_title">ИТОГО:
+                        </p>               
+                        <p class="flex-left_value">2297<span class="rub">Р</span> 
+                        </p>
+                     </div>               
+                 </div>
+                <div class="basket-bottom_flex-right">
+                    <button class="btn btn--lg" type="submit">Продолжить покупки</button>
+                    <button class="btn btn--blue btn--lg" type="submit">Заказать</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

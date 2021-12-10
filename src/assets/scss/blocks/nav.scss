@@ -1,0 +1,92 @@
+.nav__body {
+    
+    @include breakpoint ($md){
+        position: absolute;
+        top: 10%;
+        left: -100%;
+        max-width: 45%;
+        min-width: 40%;
+
+        background-color: $white;
+
+        border: 0.15rem solid $primary-black;
+        border-radius: 2rem;
+        
+        padding: 5rem 2rem 2rem 2rem;
+    }
+
+    @include breakpoint ($sm) {
+        min-width: 70%;
+    }
+}
+
+.nav__list {
+    @include breakpoint__min-width ($md){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }   
+
+    @include breakpoint ($md){
+        height: 100%;
+        overflow: scroll;
+    }
+}
+
+.nav__item{
+    position: relative;
+    width: 33%;
+    text-align: center;
+    transition: all .5s linear;
+
+    @include breakpoint ($md) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align-last: left;
+        width: 100%;
+    }
+
+    @include breakpoint__min-width ($md){
+        &:hover .nav_subnav-wrapper {
+            opacity: 1;
+            visibility: visible;
+        } 
+    }
+}
+
+.nav__link {
+    display: inline-block;
+    font-size: 1.4rem;
+    color: $black;   
+
+    @include breakpoint ($md){
+        width: 65%;
+    }
+}
+
+.nav_subnav-wrapper {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    top: -20%;
+    background-color: $white;
+
+    border: 0.15rem solid $primary-black;
+    
+    width: 100%;
+    height: 25rem;
+
+    padding: 6rem 1rem 1rem 1rem;
+
+    border-radius: 2rem;
+
+    transition: all .2s linear;  
+    
+    @include breakpoint ($md){
+        transition: none;
+        display: none;
+    }
+}

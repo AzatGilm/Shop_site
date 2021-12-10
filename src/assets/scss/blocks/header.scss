@@ -1,0 +1,88 @@
+.header {
+    width: 100%;
+    
+    background-color: $blue;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+}
+.header__inner {
+    position: relative;
+    margin: 0 auto;
+    max-width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include breakpoint ($sm) {
+        max-width: 95%;
+    }
+}
+.header__menu {
+    font-weight: 700;
+}
+
+.header__logo {
+    padding: 1rem 0;
+    
+}
+
+.menu__link {
+    color: $white;
+    font-size: 1.4rem;
+    transition: color .2s linear;
+
+    &:hover {
+        color: $primary-black;
+    }
+
+    @include breakpoint ($md) {
+        font-size: 1.2rem;
+    }
+}
+
+.menu__link:not(:first-child){
+    padding-left: 2.5rem;
+}
+
+.logo {
+    display: block;
+    text-decoration: none;
+    height: 6.5rem;
+    width: 19.5rem;
+
+    @include breakpoint ($lg) {
+        width: 14rem;
+        height: 5rem;           
+    }
+    @include breakpoint ($sm) {
+        width: 7rem;
+        height: 2.5rem;           
+    }
+}
+
+.logo__img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 190/65;
+}
+
+.header__basket {
+    padding: 1.5rem 0;
+    transition: transform .2s linear;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.basket__link {
+    display: block;
+    text-decoration: none;
+    height: 3.9rem;
+    width: 3.9rem;
+
+    background: url(../../../assets/images/basket.png) center no-repeat;
+    background-size: cover;
+}

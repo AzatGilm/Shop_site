@@ -1,0 +1,15 @@
+.menu__arrow {
+    @include breakpoint ($md) {
+        display: inline-block;
+        width: 0;
+        height: 0;
+
+        margin-left: 3rem;
+
+        border-top: 7px solid $dark;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        
+        cursor: pointer;
+    }
+}

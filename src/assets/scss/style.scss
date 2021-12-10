@@ -1,0 +1,69 @@
+@import "vars";
+@import "mixins";
+@import "vendor/reset";
+
+html {
+    font-size: 62.5%;
+}
+
+
+body {
+    background-color: #ffffff; 
+
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    font-size: 1.4rem;
+    line-height: 1.5;
+
+    color: $white;
+
+    &._lock {
+        overflow: hidden;
+    }
+}
+
+*,
+::before,
+:after {
+    box-sizing: border-box;
+}
+
+a  {
+    text-decoration: none;
+    color: $black;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+/* Blocks */
+
+@import "blocks/container";
+@import "blocks/header";
+@import "blocks/page";
+@import "blocks/main";
+@import "blocks/intro";
+@import "blocks/listing";
+@import "blocks/btn";
+@import "blocks/rub";
+@import "blocks/footer";
+@import "blocks/feedback";
+@import "blocks/estimation";
+@import "blocks/reviews";
+@import "blocks/delivery";
+@import "blocks/filter";
+@import "blocks/scrollbar";
+@import "blocks/basket";
+@import "blocks/form-block";
+@import "blocks/burger";
+@import "blocks/modal";
+@import "blocks/span-line";
+@import "blocks/product-select";
+@import "blocks/nav";
+@import "blocks/dots";
+@import "blocks/menu__arrow";
+@import "blocks/active";
+
+
+

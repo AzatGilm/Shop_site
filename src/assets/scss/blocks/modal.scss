@@ -1,0 +1,155 @@
+.modal {
+    display: none;
+    // display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+
+    padding: 8rem;
+
+    background-color: rgba($black,.8);
+    
+    overflow-y: auto;
+
+    &.show-modal{
+        display: flex;
+    }
+}
+
+.modal-content {
+    position: relative;
+    width: 60%;
+    background: $white;
+    border-radius: 3rem;
+
+    @include breakpoint ($xlg) {
+        width: 80%;
+    }
+}
+
+.modal__close {
+    position: absolute;
+    top: -6rem;
+    right: -5rem;
+    height: 8rem;
+    width: 8rem;
+    font-size: 5rem;
+    color: $blue;
+    text-align: center;
+    cursor: pointer;
+    transition: color .3s ease-in-out;
+
+    &:hover{
+        color: (darken($blue,30%));
+    }
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-rows: 2fr auto;
+    grid-row-gap: 3rem;
+    width: 100%;
+
+    @include breakpoint ($sm){
+        grid-row-gap: 1.5rem;
+    }
+
+}
+
+.modal-grid__top {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-column-gap: 3rem;
+    width: 100%;
+    border: 0.15rem solid $primary-black;
+    border-radius: 3rem;
+    
+    
+    // @include breakpoint ($lg) {
+    //     grid-template-columns: 4fr 2fr;
+    //     grid-column-gap: 2rem;
+    // }    
+
+    @include breakpoint ($lg) {
+        display: block;
+        border-radius: 2rem;
+    }
+}
+
+.modal-grid__top-left {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.img-wrapper {
+    width: 100%;
+    height: auto;
+    border-radius: 3rem;
+    transform: scale(1.005);
+    overflow: hidden;
+
+    @include breakpoint ($md) {
+        border-radius: 2rem;
+    }
+}
+
+.modal-grid__top-right {
+    padding-right: 2rem;
+    padding-bottom: 1.5rem;
+
+    @include breakpoint ($lg) {
+        padding-left: 1.5rem;
+    }
+}
+
+.modal-grid__bottom-wrapper {
+    padding-left: 6rem;
+    padding-right: 6rem;
+    padding-bottom: 2rem;
+    border: 0.15rem solid $primary-black;
+    border-radius: 3rem;
+
+    @include breakpoint ($md) {
+        padding-left: 4rem;
+        padding-right: 4rem;
+        border-radius: 2rem;
+    }
+    @include breakpoint ($sm) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.modal-grid__bottom {
+    display: flex;
+    justify-content: space-between; 
+    padding-top: 1.3rem;   
+}
+
+.modal-grid__bottom-item {
+    width: 22%;
+}
+
+.modal-grid__bottom-img {
+    width: 100%;
+    height: auto;
+}
+.headline-center {
+    text-align: center;
+
+    &--reg{
+        font-weight: 400;
+        text-align: center;
+    }
+}
+
+

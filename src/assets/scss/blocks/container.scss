@@ -1,0 +1,9 @@
+.container {
+    max-width: 122.8rem;
+    margin: 0 auto;
+    padding: 0 5rem;
+
+    @include breakpoint ($md) {
+        padding: 0 2rem;
+    }
+}

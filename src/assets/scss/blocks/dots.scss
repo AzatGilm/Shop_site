@@ -1,0 +1,30 @@
+.dots__wrapper {
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+
+    width: 20rem;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: none;
+
+    @include breakpoint ($sm){
+        width: 15rem;
+    }
+}
+
+.dot__item {
+    width: 25%;
+    height: .5rem;
+    background-color: $white;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: background-color .2s linear;
+
+    &:hover {
+        background-color: $black;
+    }    
+}

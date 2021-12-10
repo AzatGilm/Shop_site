@@ -1,0 +1,78 @@
+.reviews__estimation {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    padding-bottom: 0.7rem;
+}
+
+.reviews__estimation-caption {
+    display: inline-block;
+
+    font-size: 1.4rem;
+    line-height: 1.2;
+    
+    color: $black;
+
+    @include breakpoint ($sm){
+        font-size: 1.2rem;
+    }
+}
+
+.reviews__estimation-rating {
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+
+    &--padding-0 {
+        padding: 1rem 0;
+
+        @include breakpoint ($md){
+            padding: 0.5rem 0;
+        }
+    }
+}
+.icon {
+    cursor: pointer;
+    display: inline-block;
+    width: 2.3rem;
+    height: 2.3rem;
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    text-decoration: none;
+
+    @include breakpoint ($sm){
+        width: 1.8rem;
+        height: 1.8rem;
+    }    
+
+    &--star {        
+        fill:$dark;
+        stroke:none;
+
+        &:not(:last-child){
+            margin-right: 4px;
+        }
+        &.active {
+            fill:hsl(64, 52%, 57%);
+            stroke:none;
+        }
+
+        &--sm {
+            width: 1.9rem;
+            height: 1.9rem;
+
+            &:not(:last-child){
+                margin-right: 0;
+            }
+
+            @include breakpoint ($lg){
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+    }
+
+    
+}
+
