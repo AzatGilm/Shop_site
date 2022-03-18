@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    
+    <!-- Useful meta tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    
+    <title>Basket</title>
+</head>
+<body>
+
+    <div class="page" id="page">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    
+                        <nav class="header__menu">
+                            <div class="header__menu-item">
+                                <a href="delivery.html" class="menu__link">Оплата и доставка</a>
+                                <a href="feedback.html" class="menu__link">Отзывы</a>
+                            </div>
+                        </nav>
+        
+                        <div class="header__logo">
+                            <a href="/" class="logo"><img class="logo__img" src="assets/images/Krokha_logotip1.png" alt=""></a>
+                        </div>
+                    
+                    <div class="header__basket">
+                        <a href="basket.html" class="basket__link"></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main -->
+        <div class="main">
+            <div class="container">
+                
+                <div class="basket">
+                    <div class="page-block page-block--m basket-grid">
+                        <div class="page-block page-block--m basket-left">
+                            <h1 class="listing-title">Корзина заказа</h1>
+                            <div class="basket-listing">
+                               
+                                <div class="basket-listing__left">
+                                    <img src="assets/images/basket/basket1.png" alt="img1" class="listing-item__img">
+                                </div>
+                                <div class="basket-listing__middle">
+                                    <div class="listing-item__info">
+                                        <div class="listing-item__info-title listing-item__info-title--basket">Костюм для девочки</div>
+                                        <div class="listing-item__info-price">599              <span class="rub">Р</span> 
+                                            <div class="strike">719
+                                                <span class="rub">Р</span> 
+                                            </div>
+                                        </div>
+                                        <div class="listing-item__info-wheight">
+                                            Вес посылки: 400 г.
+                                        </div>
+                
+                                    </div> 
+                                </div>
+                                <div class="basket-listing__right">
+                                   <form class="form" action="/" method="post">
+                                       <input class="quantity" name="sel_number" type="number" >
+                                   </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-block page-block--m basket-right">
+                            <div class="summ">
+                                <div class="listing-title listing-summ">Итого:  
+                                    <div class="listing-item__info-price listing-item__info-price--xl">599 <span class="rub">Р</span>                     
+                                    </div> 
+                                 </div>
+                                 
+                                 <div class="summ__quantity">
+                                     3 товара
+                                 </div>
+                                 <div class="summ_discount">
+                                     Сумма скидки: 360 <span class="rub">Р</span>
+                                 </div>
+                                 <div class="btn--container">
+                                    <a href="#" class="btn btn--blue btn--md">Оформить заказ</a>
+                                </div>
+                
+                            </div>
+                        </div>
+                        
+                        <div class="page-block page-block--m basket-bottom">
+                            <span class="form-line" ></span>
+                            <h2 class="listing-title">Оформление заказа</h2>
+                            <form class="form-block" action="/" method="post" >
+                                <input type="text" class="form-block__control" name="firstname" placeholder="Имя">
+                                <input type="tel" class="form-block__control" name="telephone" placeholder="Телефон">
+                                <input type="text" class="form-block__control" name="city" placeholder="Город">
+                                <textarea type="text" class="form-block__control" name="addres" placeholder="Адрес"></textarea>
+                
+                                
+                                <h3 class="form-block_radio-caption">Способ получения:</h3>
+                                <input type="radio" name="radio" value="1" id="form-block_radio">  
+                                <label for="form-block_radio">Доставка</label>        
+                                <input type="radio" name="radio" value="2" id="form-block_radio">  
+                                <label for="form-block_radio">Забрать в магазине</label> 
+                
+                            </form>
+                        </div>
+                
+                        <div class="page-block page-block--m basket-bottom" >
+                            <span class="form-line" ></span>
+                            <div class="basket-bottom_flex">
+                                <div class="basket-bottom_flex-left">
+                                    <div class="flex-left_item">
+                                        <p class="flex-left_title">Сумма заказа:
+                                        </p>               
+                                        <p class="flex-left_value">1797<span class="rub">Р</span> 
+                                        </p> 
+                                    </div>
+                                    <div class="flex-left_item">              
+                                        <p class="flex-left_title">Доставка:
+                                        </p>               
+                                        <p class="flex-left_value">500<span class="rub">Р</span> 
+                                        </p> 
+                                    </div>
+                                    <div class="flex-left_item">             
+                                        <p class="flex-left_title">ИТОГО:
+                                        </p>               
+                                        <p class="flex-left_value">2297<span class="rub">Р</span> 
+                                        </p>
+                                     </div>               
+                                 </div>
+                                <div class="basket-bottom_flex-right">
+                                    <button class="btn btn--lg" type="submit">Продолжить покупки</button>
+                                    <button class="btn btn--blue btn--lg" type="submit">Заказать</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-block">
+                    <div class="footer__logo">
+                        <a href="/" class="logo"><img class="logo__img" src="assets/images/Krokha_logotip1.png" alt=""></a>
+                    </div>
+        
+                    <div class="footer__info">
+                        <p>Руководитель организации: генеральный директор 
+                            Давыдова Мария Сергеевна. Юридический адрес 
+                            ПАО "Детский Мир" - 119415, город Москва, проспект 
+                            Вернадского, 37-3.
+                            Организации ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО 
+                            "ДЕТСКИЙ МИР" присвоены ИНН 7729355029, 
+                            ОГРН 1027700047100, ОКПО 47568073. </p>
+                    </div>
+        
+                    <div class="footer__social">
+                        <div class="social__item">
+                            <a href="#" class="social__link" target="blank">
+                                <img src="../assets/images/social/instagram.svg" alt="instagram">
+                            </a>
+                        </div>
+                        <div class="social__item">
+                            <a href="#" class="social__link" target="blank">
+                                <img src="../assets/images/social/pinterest.svg" alt="pinterest">
+                            </a>
+                        </div>
+                        <div class="social__item">
+                            <a href="#" class="social__link" target="blank">
+                                <img src="../assets/images/social/vk.svg" alt="vk">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal__close">&times;</div>
+            <div class="page-block page-block--m">
+                <div class="modal-grid">
+                    <div class="modal-grid__top">
+                        <div class="img-wrapper">
+                            <img src="assets/images/modal/item.jpg" alt="" class="modal-grid__top-left">
+                         </div>
+                        <div class="modal-grid__top-right">
+                            <h1 class="listing-item__info-title listing-item__info-title--m">Платье с цветочным узором</h1>
+                            <div class="listing-item__info-price">599              <span class="rub">Р</span> 
+                                <div class="strike">719
+                                    <span class="rub">Р</span> 
+                                </div>
+                            </div>
+                            <span class="span-line"></span>
+                            <select class="product-select" name="product" >
+                                <option value="1">Размер 1</option>
+                                <option value="2">Размер 2</option>
+                                <option value="3">Размер 3</option>
+                                <option value="4">Размер 4</option>
+                                <option value="5">Размер 5</option>
+                                <option value="6">Размер 6</option>
+                            </select>
+                            <h2 class="discribe-content__item">Описание:
+                            </h2>
+                            <div class="discribe-content__item">
+                                Платье Bossa Nova выполнено 
+                                из эластичного супрема. 
+                                Детали: застежка на кнопку на спине, завышенная талия, оборка по низу изделия, укороченный рукав.
+                                В составе платья 100% хлопок.
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                    <div class="modal-grid__bottom-wrapper">
+                        <h2 class="listing-item__info-title listing-item__info-title--m headline-center">Отзывы</h1>
+                            <div class="modal-grid__bottom">
+                                <div class="modal-grid__bottom-item">
+                                    <img class="modal-grid__bottom-img" src="assets/images/modal/item-small.png" alt="img">
+                                </div>
+                                <div class="modal-grid__bottom-item">
+                                    <img class="modal-grid__bottom-img" src="assets/images/modal/item-small.png" alt="img">
+                                </div>
+                                <div class="modal-grid__bottom-item">
+                                    <img class="modal-grid__bottom-img" src="assets/images/modal/item-small.png" alt="img">
+                                </div>
+                                <div class="modal-grid__bottom-item">
+                                    <img class="modal-grid__bottom-img" src="assets/images/modal/item-small.png" alt="img">
+                                </div>
+                            </div> 
+                            <h2 class="listing-item__info-title listing-item__info-title--m headline-center--reg">Другие отзывы</h1>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
