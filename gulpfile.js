@@ -1,21 +1,21 @@
 "use strict";
 
-const {src,dest} = require ('gulp');
-const gulp = require ('gulp');
-const browserSync = require ('browser-sync').create();
-const plumber = require ('gulp-plumber');
-const panini = require ('panini');
-const notify = require('gulp-notify');
-const sass = require('gulp-sass')(require('sass'));
-const autoprefixer = require('gulp-autoprefixer');
-const cssbeautify = require('gulp-cssbeautify');
-const cssnano = require('gulp-cssnano');
+const {src, dest} = require("gulp");
+const gulp = require("gulp");
+const autoprefixer = require("gulp-autoprefixer");
+const cssbeautify = require("gulp-cssbeautify");
 const removeComments = require('gulp-strip-css-comments');
-const rename = require('gulp-rename');
+const rename = require("gulp-rename");
+const sass = require("gulp-sass")(require("sass"));
+const cssnano = require("gulp-cssnano");
+const uglify = require("gulp-uglify");
+const plumber = require("gulp-plumber");
+const panini = require("panini");
+const del = require("del");
+const notify = require("gulp-notify");
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
-// const image = require('gulp-image');
-const del = require("del");
+const browserSync = require("browser-sync").create();
 
 
 /* Paths */
@@ -47,67 +47,69 @@ const path = {
     clean: "./" + distPath
 }
 
+
+
 /* Tasks */
 
-function serve () {
-    browserSync.init ({
+function serve() {
+    browserSync.init({
         server: {
-            baseDir:"./" + distPath
+            baseDir: "./" + distPath
         }
     });
 }
 
-function html (cb) {
+function html(cb) {
     panini.refresh();
-    return src(path.src.html, {base:srcPath})
-    .pipe(plumber())
-    .pipe(panini({
-        root:     srcPath,
-        layouts:  srcPath + 'layouts/',
-        partials: srcPath + 'partials/',
-        helpers:  srcPath + 'helpers/',
-        data:     srcPath + 'data/'
-    }))
-    .pipe(dest(path.build.html))
-    .pipe(browserSync.reload({stream: true}));
+    return src(path.src.html, {base: srcPath})
+        .pipe(plumber())
+        .pipe(panini({
+            root:       srcPath,
+            layouts:    srcPath + 'layouts/',
+            partials:   srcPath + 'partials/',
+            helpers:    srcPath + 'helpers/',
+            data:       srcPath + 'data/'
+        }))
+        .pipe(dest(path.build.html))
+        .pipe(browserSync.reload({stream: true}));
 
     cb();
 }
 
 function css(cb) {
     return src(path.src.css, {base: srcPath + "assets/scss/"})
-    .pipe(plumber({
-        errorHandler : function(err) {
-            notify.onError({
-                title: "SCSS Error",
-                message: "Error: <%= error.message %>"
-            })(err);
-            this.emit('end');
-        }
-    }))
-    .pipe(sass({
-        includePaths: './node_modules'
-    }))
-    .pipe(autoprefixer({
-        cascade: true
-    }))
-    .pipe(cssbeautify())
-    .pipe(dest(path.build.css))
-    .pipe(cssnano({
-        zindex: false,
-        discardComments: {
-            removeAll: true
-        }
-    }))
-    .pipe(removeComments())
-    .pipe(rename({
-        suffix: ".min",
-        extname: ".css"
-    }))
-    .pipe(dest(path.build.css))
-    .pipe(browserSync.reload({stream:true}));
+        .pipe(plumber({
+            errorHandler : function(err) {
+                notify.onError({
+                    title:    "SCSS Error",
+                    message:  "Error: <%= error.message %>"
+                })(err);
+                this.emit('end');
+            }
+        }))
+        .pipe(sass({
+            includePaths: './node_modules/'
+        }))
+        .pipe(autoprefixer({
+            cascade: true
+        }))
+        .pipe(cssbeautify())
+        .pipe(dest(path.build.css))
+        .pipe(cssnano({
+            zindex: false,
+            discardComments: {
+                removeAll: true
+            }
+        }))
+        .pipe(removeComments())
+        .pipe(rename({
+            suffix: ".min",
+            extname: ".css"
+        }))
+        .pipe(dest(path.build.css))
+        .pipe(browserSync.reload({stream: true}));
 
-    cb()
+    cb();
 }
 
 function cssWatch(cb) {
@@ -115,23 +117,23 @@ function cssWatch(cb) {
         .pipe(plumber({
             errorHandler : function(err) {
                 notify.onError({
-                    title: "SCSS Error",
-                    message: "Error: <%= error.message %>"
+                    title:    "SCSS Error",
+                    message:  "Error: <%= error.message %>"
                 })(err);
                 this.emit('end');
             }
         }))
         .pipe(sass({
-            includePaths: './node_modules'
+            includePaths: './node_modules/'
         }))
         .pipe(rename({
             suffix: ".min",
             extname: ".css"
         }))
         .pipe(dest(path.build.css))
-        .pipe(browserSync.reload({stream:true}));
+        .pipe(browserSync.reload({stream: true}));
 
-    cb()
+    cb();
 }
 
 function js(cb) {
@@ -188,24 +190,6 @@ function images(cb) {
     cb();
 }
 
-// function images(cb) {
-//     return src(path.src.images)
-//         .pipe(image({
-//             pngquant: true,
-//             optipng: false,
-//             zopflipng: true,
-//             jpegRecompress: false,
-//             mozjpeg: true,
-//             gifsicle: true,
-//             svgo: true,
-//             concurrent: 10
-//         }))
-//         .pipe(dest(path.build.images))
-//         .pipe(browserSync.reload({stream: true}));
-
-//     cb();
-// }
-
 function fonts(cb) {
     return src(path.src.fonts)
         .pipe(dest(path.build.fonts))
@@ -228,8 +212,10 @@ function watchFiles() {
     gulp.watch([path.watch.fonts], fonts);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js,images, fonts));
+const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts));
 const watch = gulp.parallel(build, watchFiles, serve);
+
+
 
 /* Exports Tasks */
 exports.html = html;
@@ -241,7 +227,3 @@ exports.clean = clean;
 exports.build = build;
 exports.watch = watch;
 exports.default = watch;
-
-
-
-
